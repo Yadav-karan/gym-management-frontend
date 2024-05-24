@@ -13,6 +13,9 @@ export class MembersComponent implements OnInit {
   ngOnInit(): void {
     this.getMembers(this.item);
   }
+
+  pageSizeArray = [5,10,15];
+
   //pageParams = new PageParams();
   memberData:any;
   total?:number; 
@@ -34,6 +37,10 @@ export class MembersComponent implements OnInit {
 
   onPageChange(cnumber: number) {
     this.pageNumber = cnumber;
+    this.getMembers(this.item);
+  }
+
+  updatePageSize() {
     this.getMembers(this.item);
   }
 }

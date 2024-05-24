@@ -12,7 +12,9 @@ export class RegisterMemberComponent implements OnInit {
 
   @Output() updateMemberDetailsEvent = new EventEmitter<any>()
   
-  modeOfPayment:string[] =["Cash","UPI"]
+  modeOfPayment:string[] =["Cash","UPI"];
+  pageSizeArray = [5,10,15];
+
   member:Member = new Member();
   ngOnInit(): void {
   }

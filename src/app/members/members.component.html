@@ -1,5 +1,15 @@
 <div class="mt-2 register-member container">
-    <app-register-member (updateMemberDetailsEvent)="getMembers($event)"></app-register-member>
+    <div>
+        <select class="form-control" style="height: 100%" name="pageSize" (change)="updatePageSize()"
+          [(ngModel)]="pageSize">
+          <option *ngFor="let pageSize of pageSizeArray" [value]="pageSize">
+            {{ pageSize }}
+          </option>
+        </select>
+      </div>
+    <div>
+        <app-register-member (updateMemberDetailsEvent)="getMembers($event)"></app-register-member>
+    </div>   
 </div>
 
 <div class="container mt-4">
