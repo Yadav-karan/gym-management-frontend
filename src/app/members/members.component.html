@@ -1,0 +1,36 @@
+<div class="mt-2 register-member container">
+    <app-register-member (updateMemberDetailsEvent)="getMembers($event)"></app-register-member>
+</div>
+
+<div class="container mt-4">
+    <table class="table table-striped" >
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Age</th>
+                <th>Joinig Date</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor =  "let m of memberData | paginate :
+            {
+                  itemsPerPage: pageSize,
+                  currentPage: pageNumber,
+                  totalItems: total
+            }">
+            <td>{{m.member_name}}</td>
+            <td>{{m.member_email}}</td>
+            <td>{{m.member_contact}}</td>
+            <td>{{m.member_age}}</td>
+            <td>{{m.joining_date}}</td>
+            <td>{{m.member_address}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="onPageChange($event)">
+    </pagination-controls>
+</div>

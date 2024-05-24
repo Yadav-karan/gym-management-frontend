@@ -1,0 +1,177 @@
+<!-- Button trigger modal -->
+<div class="container">
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-toggle="modal"
+    data-target="#registerMemberDialog"
+  >
+    Register Member
+  </button>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="registerMemberDialog"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="registerMemberDialogTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerMemberDialogTitle">
+          Register Member
+        </h5>
+        <button
+          type="button"
+          id="closeModel"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form
+          #registerMemberForm="ngForm"
+          (ngSubmit)="registerMember(registerMemberForm)"
+        >
+          <div class="row">
+            <div class="col-md-6">
+              <label for="Name">Enter Name: </label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Enter Name"
+                [(ngModel)]="member.member_name"
+                name="member_name"
+                value="member.member_name"
+              />
+            </div>
+            <div class="col-md-6 ml-auto">
+              <label for="Email">Enter Email: </label>
+              <input
+                class="form-control"
+                type="email"
+                placeholder="Enter Email"
+                [(ngModel)]="member.member_email"
+                name="member_email"
+                value="member.member_email"
+              />
+            </div>
+          </div>
+          <label for="address">Enter Address: </label> <br />
+          <textarea
+            class="address form-control"
+            placeholder="Enter Address"
+            [(ngModel)]="member.member_address"
+            name="member_address"
+            value="member_address"
+          >
+          </textarea>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label for="contact">Enter Contact: </label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Enter Contact"
+                [(ngModel)]="member.member_contact"
+                name="member_contact"
+                value="member.member_contact"
+                maxlength="10"
+              />
+            </div>
+            <div class="col-md-4">
+              <label for="age">Enter Age: </label>
+              <input
+                class="form-control"
+                type="number"
+                [(ngModel)]="member.member_age"
+                name="member_age"
+                min="0"
+                value="member.member_age"
+              />
+            </div>
+            <div class="col-md-4 ml-auto">
+              <label for="plan cost">Enter Plan Cost: </label>
+              <input
+                class="form-control"
+                type="number"
+                [(ngModel)]="member.plan_cost"
+                name="plan_cost"
+                min="0"
+                value="member.plan_cost"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <label for="plan">Enter Plan Duration: </label>
+              <input
+                class="form-control"
+                type="number"
+                [(ngModel)]="member.plan_duration"
+                name="plan_duration"
+                value="member.plan_duration"
+                min="1"
+              />
+            </div>
+            <div class="col-md-6 ml-auto">
+              <label for="payment mode">Enter Mode Of Payment: </label>
+              <select
+                class="form-select"
+                name="mode_of_payment"
+                class="mode"
+                [(ngModel)]="member.mode_of_payment"
+              >
+                <option *ngFor="let mode of modeOfPayment" [value]="mode">
+                  {{ mode }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <label for="gender">Enter Gender: </label>
+          <input
+            class="btn-radio"
+            type="radio"
+            placeholder="Enter Gender"
+            [(ngModel)]="member.gender"
+            name="gender"
+            value="Male"
+          />
+          <label for="male">Male</label>
+          <input
+            class="btn-radio"
+            type="radio"
+            placeholder="Enter Gender"
+            [(ngModel)]="member.gender"
+            name="gender"
+            value="Female"
+          />
+          <label for="female">Female</label>
+          <input
+            class="btn-radio"
+            type="radio"
+            placeholder="Enter Gender"
+            [(ngModel)]="member.gender"
+            name="gender"
+            value="Other"
+          />
+          <label for="other">Other</label>
+          <br />
+          <br />
+
+          <button class="btn-submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

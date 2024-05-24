@@ -1,0 +1,42 @@
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.center{
+    text-align: center;
+}
+
+.form{
+    width: 400px;
+}
+
+.btn-submit{
+    width: 100%;
+    padding: 5px;
+    background-color: black;
+    color: blanchedalmond;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border:none;
+    border-radius: 5px;
+}
+
+.btn-submit:hover{
+    background-color: rgb(94, 94, 94);
+}
+
+.mode{
+    width: 50%;
+}
+
+.btn-radio{
+    margin-left: 10px;
+}
+
+.address{
+    width: 100%;
+    height: 60px;
+}

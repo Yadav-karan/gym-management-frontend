@@ -1,0 +1,21 @@
+.navcontainer{
+    background-color: #1F2328;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 10px;
+}
+
+li{
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.home{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
